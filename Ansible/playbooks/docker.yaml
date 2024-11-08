@@ -1,0 +1,63 @@
+- name: Installing Docker For RaspberryPiOs
+  hosts: "rpi5"
+  become: yes
+  tasks:
+  - name: Include vars in variables.yaml
+    ansible.builtin.include_vars:
+      file: variables.yaml
+  - name: Packager Update & Upgrade
+    apt:
+      update_cache: yes
+      upgrade: 'yes'
+  - name: Remove Obsolete packages
+    ansible.builtin.package:
+      name: 
+       - docker.io
+       - docker-compose
+       - docker-doc
+       - podman-docker
+       - containerd
+       - runc
+      state: absent
+  - name: Installing Dependencies packages
+    ansible.builtin.package:
+      name:
+       - ca-certificates
+       - curl
+      state: present
+  - name: Add Docker GPG apt Key
+    ansible.builtin.apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+  - name: Add repository into sources list
+    ansible.builtin.apt_repository:
+      repo: deb [arch=arm64] https://download.docker.com/linux/debian bookworm stable
+      state: present
+      filename: docker
+  - name: Installing Docker packages
+    ansible.builtin.package:
+      name:
+       - docker-ce
+       - docker-ce-cli
+       - containerd.io
+       - docker-buildx-plugin
+       - docker-compose-plugin
+      state: present
+  - name: Setup docker user
+    ansible.builtin.user:
+      name: '{{ docker_user }}'
+      groups: "docker,sudo"
+      append: true
+  - name: Allow passwordless sudo for docker user
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^{{ docker_user }}'
+      line: '{{ docker_user }} ALL=(ALL) NOPASSWD:ALL'
+      validate: '/usr/sbin/visudo -cf %s'
+  - name: Set authorized key from file
+    ansible.posix.authorized_key:
+      user: '{{ docker_user }}'
+      state: present
+      key: "{{ lookup ('file', '{{ docker_user_pub_key }}')}}"
+

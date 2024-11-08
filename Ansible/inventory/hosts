@@ -1,7 +1,7 @@
-[raspberries]
+[rpi5]
 pi-5a-2g-1
 pi-5a-2g-2
 pi-5a-2g-3
 
-[raspberries:vars]
+[rpi5:vars]
 ansible_user=shiraori
