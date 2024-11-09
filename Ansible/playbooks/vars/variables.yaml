@@ -1,2 +1,4 @@
 docker_user: "irishman"
 docker_user_pub_key: "/Users/mania/.ssh/irishman.pub"
+drifter_user: "drifter"
+drifter_user_pub_key: "/Users/mania/.ssh/drifter.pub"
