@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if [ ! -f "./.env" ]; then
 	echo "No file named .env in current directory : $(pwd)"
 	exit 1
@@ -27,7 +26,8 @@ while IFS= read -r line; do
 
 	CPU="${ID:1:2}"
 	MEM="${ID:3:2}"
-	MEM=$(($MEM * 1024))
+	MEM_NUM=$((10#$MEM))
+    MEM=$(($MEM_NUM * 1024))
 	SSD="${ID:5:4}G"
 
 	echo "Creating Cloud-Init Template with following values : "
@@ -36,6 +36,8 @@ while IFS= read -r line; do
 	echo "  --Memory $MEM"
 	echo "  --Storage $SSD"
 	echo "  --Img $ISO_PATH"
+
+	# -f Check ISO_PATH
 
 	# TODO Add verification return code $?==0 for each command
 
