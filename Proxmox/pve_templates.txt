@@ -1,0 +1,1 @@
+902020040#vle2#/var/lib/vs/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
