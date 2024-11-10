@@ -11,7 +11,6 @@ terraform {
 variable "proxmox_api_url" {
   type = string
 }
-
 variable "proxmox_api_token_id" {
   type      = string
   sensitive = true
@@ -19,6 +18,12 @@ variable "proxmox_api_token_id" {
 variable "proxmox_api_token_secret" {
   type      = string
   sensitive = true
+}
+variable "proxmox_cloudinit_user" {
+  type = string
+}
+variable "proxmox_cloudinit_public_key" {
+  type = string
 }
 
 provider "proxmox" {
