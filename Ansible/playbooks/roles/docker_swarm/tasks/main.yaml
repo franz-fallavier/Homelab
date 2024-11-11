@@ -9,6 +9,13 @@
     advertise_addr: eth0:2377
   register: __output_swarm
   when: inventory_hostname in groups['docker_swarm_manager'][0]
+- name: Manager Join
+  docker_swarm:
+    state: join
+    advertise_addr: eth0:2377
+    join_token: "{{ hostvars[groups['docker_swarm_manager'][0]]['__output_swarm']['swarm_facts']['JoinTokens']['Manager'] }}"
+    remote_addrs: "{{ groups['docker_swarm_manager'][0] }}"
+  when: inventory_hostname in groups['docker_swarm_manager'] and inventory_hostname not in groups['docker_swarm_manager'][0]
 - name: Worker Join
   docker_swarm:
     state: join
