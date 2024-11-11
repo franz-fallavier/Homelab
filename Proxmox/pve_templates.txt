@@ -2,6 +2,7 @@
 901020040#ovh-value#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
 902040080#ovh-essential#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
 904080160#ovh-comfort#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+
 908080160#ovh-elite-08-1#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
 908080320#ovh-elite-08-2#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
 908080640#ovh-elite-08-3#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
@@ -15,3 +16,12 @@
 904040080#ovh-vle-04#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
 908080120#ovh-vle-08#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
 916160160#ovh-vle-16#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+
+
+901010020#ubuntu-cloud-24.04-0020#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+901010040#ubuntu-cloud-24.04-0040#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+901010080#ubuntu-cloud-24.04-0080#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+901010120#ubuntu-cloud-24.04-0120#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+901010160#ubuntu-cloud-24.04-0160#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+901010320#ubuntu-cloud-24.04-0320#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+901010640#ubuntu-cloud-24.04-0640#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme

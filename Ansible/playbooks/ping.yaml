@@ -1,7 +1,6 @@
-- name: Ping All Hosts
-  hosts: "*"
-  become: yes
+- name: Pinging All my Hosts
+  hosts: all
+  become: true
   tasks:
     - name: Ping my hosts
       ansible.builtin.ping:
-

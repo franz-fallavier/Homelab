@@ -4,3 +4,4 @@
 *credentials*
 .terraform*
 *.tfstate*
+*.vscode

@@ -1,0 +1,14 @@
+- name: Installing Docker
+  hosts: "docker"
+  become: true
+  vars:
+    arch_mapping: # Map ansible architecture {{ ansible_architecture }} names to Docker's architecture names
+      x86_64: amd64
+      aarch64: arm64
+  roles:
+    - docker
+- name: Installing Swarm on RaspberryPiOs
+  hosts: "rpi5"
+  become: true
+  roles:
+    - docker_swarm

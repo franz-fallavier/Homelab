@@ -1,0 +1,7 @@
+- name: Include vars in variables.yaml
+  ansible.builtin.include_vars:
+    file: variables.yaml
+- name: Packager Update & Upgrade
+  apt:
+    update_cache: yes
+    upgrade: "yes"

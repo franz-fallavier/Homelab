@@ -1,0 +1,17 @@
+- name: Setup drifter user
+  ansible.builtin.user:
+    name: "{{ drifter_user }}"
+    groups: "sudo"
+    append: true
+- name: Allow passwordless sudo for drifter user
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: "^{{ drifter_user }}"
+    line: "{{ drifter_user }} ALL=(ALL) NOPASSWD:ALL"
+    validate: "/usr/sbin/visudo -cf %s"
+- name: Set authorized key from file for drifter user
+  ansible.posix.authorized_key:
+    user: "{{ drifter_user }}"
+    state: present
+    key: "{{ lookup ('file', '{{ drifter_user_pub_key }}')}}"

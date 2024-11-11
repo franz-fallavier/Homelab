@@ -1,0 +1,18 @@
+- name: Installing Dependencies packages
+  ansible.builtin.package:
+    name:
+      - python3-docker
+    state: present
+- name: Check / Initialize Swarm
+  docker_swarm:
+    state: present
+    advertise_addr: eth0:2377
+  register: __output_swarm
+  when: inventory_hostname in groups['docker_swarm_manager'][0]
+- name: Worker Join
+  docker_swarm:
+    state: join
+    advertise_addr: eth0:2377
+    join_token: "{{ hostvars[groups['docker_swarm_manager'][0]]['__output_swarm']['swarm_facts']['JoinTokens']['Worker'] }}"
+    remote_addrs: "{{ groups['docker_swarm_manager'][0] }}"
+  when: inventory_hostname in groups['docker_swarm_worker']

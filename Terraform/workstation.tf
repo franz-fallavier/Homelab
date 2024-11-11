@@ -1,10 +1,10 @@
-resource "proxmox_vm_qemu" "gitlab" {
-  name        = "gitlab"
-  desc        = "Ubuntu Cloud Hosting GitLab"
-  vmid        = "210"
+resource "proxmox_vm_qemu" "workstation" {
+  name        = "workstation"
+  desc        = "Ubuntu Cloud Hosting Dev Tools"
+  vmid        = "220"
   target_node = "zigris"
   agent       = 0
-  clone       = "ubuntu-cloud-24.04-0080"
+  clone       = "ubuntu-cloud-24.04-0040"
   cores       = 8
   sockets     = 1
   numa        = true
@@ -40,14 +40,14 @@ resource "proxmox_vm_qemu" "gitlab" {
       scsi0 {
         disk {
           storage = "local-nvme"
-          size    = 80
+          size    = 40
         }
       }
     }
   }
   boot         = "order=scsi0"
   os_type      = "cloud-init"
-  searchdomain = "gitlab"
+  searchdomain = "workstation"
   nameserver   = "10.0.2.3"
   ipconfig0    = "ip=dhcp"
   ciuser       = var.proxmox_cloudinit_user

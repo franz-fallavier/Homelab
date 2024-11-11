@@ -1,0 +1,7 @@
+- name: Basic Server Configuration
+  hosts: all
+  become: true
+  roles:
+    - base
+    - tmux
+    - drifter
