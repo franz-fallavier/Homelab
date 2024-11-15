@@ -6,13 +6,20 @@ pi-4b-4g-1
 pi-4b-4g-2
 pi-4b-2g-1
 
-[ubuntu_cloud_vms]
+[proxmox-vms]
 gitlab
 gitlab-runner-1
 gitlab-runner-2
 workstation
 minecraft-server
 factorio-server
+k3s-node-1
+k3s-node-2
+k3s-node-3
+
+[docker]
+gitlab
+workstation
 
 [docker:children]
 rpi5
