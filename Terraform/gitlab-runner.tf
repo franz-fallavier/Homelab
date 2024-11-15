@@ -4,7 +4,7 @@ resource "proxmox_vm_qemu" "gitlab-runner" {
   desc        = "Ubuntu Cloud Hosting GitLab-Runner"
   vmid        = "21${count.index + 1}"
   target_node = "zigris"
-  agent       = 0
+  agent       = 1
   clone       = "ubuntu-cloud-24.04-0020"
   cores       = 2
   sockets     = 1

@@ -5,3 +5,9 @@
     - base
     - tmux
     - drifter
+
+- name: QEMU Agent on VM
+  hosts: proxmox-vms
+  become: true
+  roles:
+    - qemu

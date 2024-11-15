@@ -1,0 +1,12 @@
+---
+# tasks file for playbooks/roles/qemu
+- name: Intall qemu guest agent
+  ansible.builtin.package:
+    name:
+      - qemu-guest-agent
+    state: present
+- name: Start qemu guest agent
+  ansible.builtin.systemd_service:
+    name: qemu-guest-agent
+    state: "started"
+    enabled: true

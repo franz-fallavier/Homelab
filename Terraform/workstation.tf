@@ -3,7 +3,7 @@ resource "proxmox_vm_qemu" "workstation" {
   desc        = "Ubuntu Cloud Hosting Dev Tools"
   vmid        = "220"
   target_node = "zigris"
-  agent       = 0
+  agent       = 1
   clone       = "ubuntu-cloud-24.04-0040"
   cores       = 8
   sockets     = 1

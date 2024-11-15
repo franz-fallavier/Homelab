@@ -4,7 +4,7 @@ resource "proxmox_vm_qemu" "k3s-cluster" {
   desc        = "Ubuntu Cloud Hosting k3s"
   vmid        = "33${count.index + 1}"
   target_node = "zigris"
-  agent       = 0
+  agent       = 1
   clone       = "ubuntu-cloud-24.04-0080"
   cores       = 4
   sockets     = 1

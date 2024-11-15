@@ -3,7 +3,7 @@ resource "proxmox_vm_qemu" "factorio-server" {
   desc        = "Ubuntu Cloud Hosting Factorio Servers"
   vmid        = "420"
   target_node = "zigris"
-  agent       = 0
+  agent       = 1
   clone       = "ubuntu-cloud-24.04-0040"
   cores       = 4
   sockets     = 1
