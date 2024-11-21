@@ -11,6 +11,8 @@ resource "proxmox_vm_qemu" "workstation" {
   vcpus       = 0
   cpu         = "host"
   memory      = 8192
+  onboot      = true
+  startup     = "order=1"
 
   network {
     bridge = "vmbr0"
