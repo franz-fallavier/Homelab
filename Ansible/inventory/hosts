@@ -16,6 +16,21 @@ factorio-server
 k3s-node-1
 k3s-node-2
 k3s-node-3
+k3s-worker-1
+k3s-worker-2
+
+[k3s-cluster:children]
+k3s-nodes
+k3s-workers
+
+[k3s-nodes]
+k3s-node-1
+k3s-node-2
+k3s-node-3
+
+[k3s-workers]
+k3s-worker-1
+k3s-worker-2
 
 [docker]
 gitlab
