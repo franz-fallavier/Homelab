@@ -38,21 +38,29 @@ workstation
 
 [docker:children]
 rpi5
-docker_swarm_manager
-docker_swarm_worker
+rpi5_docker_swarm_manager
+rpi5_docker_swarm_worker
 
-[docker_swarm_manager]
+[rpi5_docker_swarm_manager]
 pi-5a-2g-1
 
-[docker_swarm_worker]
+[rpi5_docker_swarm_worker]
 pi-5a-2g-2
 pi-5a-2g-3
-
-[docker:vars]
 
 [rpi5]
 pi-5a-2g-1
 pi-5a-2g-2
 pi-5a-2g-3
 
-[rpi5:vars]
+[ubuntu]
+gitlab
+gitlab-runner-1
+gitlab-runner-2
+workstation
+minecraft-server
+factorio-server
+
+[ubuntu:children]
+raspberrypies
+k3s-cluster

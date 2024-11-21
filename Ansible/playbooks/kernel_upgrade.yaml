@@ -1,0 +1,23 @@
+- name: Updating Kernelt
+  hosts: "ubuntu"
+  become: true
+  tasks:
+    - name: Update all packages on a Debian/Ubuntu
+      apt:
+        update_cache: yes
+        upgrade: dist
+    - name: Check If Reboot is required
+      stat:
+        path: /var/run/reboot-required
+      register: stat_result
+    - name: Reboot box if kernel/libs updated and requested by the system
+      ansible.builtin.reboot:
+        post_reboot_delay: 30
+      when: stat_result.stat.exists
+    - name: Wait for system to become reachable again
+      wait_for_connection:
+        delay: 60
+        timeout: 300
+      when: stat_result.stat.exists
+    - debug:
+        var: ansible_kernel
