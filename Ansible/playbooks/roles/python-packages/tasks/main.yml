@@ -1,0 +1,10 @@
+---
+# tasks file for playbooks/roles/pipx
+- name: Installing pipx
+  ansible.builtin.package:
+    name:
+      - python3-pip
+      - pipx
+      - virtualenv
+      - python3-setuptools
+    state: present

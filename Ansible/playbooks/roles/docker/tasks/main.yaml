@@ -16,6 +16,8 @@
     name:
       - ca-certificates
       - curl
+      - software-properties-common
+      - apt-transport-https
     state: present
 - name: Add Docker GPG apt Key
   ansible.builtin.apt_key:
@@ -55,5 +57,10 @@
 - name: Start Docker
   service:
     name: docker
+    state: started
+    enabled: yes
+- name: Start Docker
+  ansible.builtin.systemd_service:
+    name: dockerd
     state: started
     enabled: yes

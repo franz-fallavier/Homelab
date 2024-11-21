@@ -2,8 +2,7 @@
   hosts: all
   become: true
   roles:
-    - base
-    - tmux
+    - tools
     - drifter
 
 - name: QEMU Agent on VM
@@ -11,3 +10,9 @@
   become: true
   roles:
     - qemu
+
+- name: Installing Python packages
+  hosts: workstation
+  become: true
+  roles:
+    - python-packages

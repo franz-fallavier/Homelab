@@ -1,8 +1,3 @@
-- name: Installing Dependencies packages
-  ansible.builtin.package:
-    name:
-      - python3-docker
-    state: present
 - name: Check / Initialize Swarm
   docker_swarm:
     state: present

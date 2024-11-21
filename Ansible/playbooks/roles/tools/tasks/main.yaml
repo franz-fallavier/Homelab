@@ -5,3 +5,11 @@
   apt:
     update_cache: yes
     upgrade: "yes"
+- name: Installing Tooling packages
+  ansible.builtin.package:
+    name:
+      - tmux
+      - zsh
+      - nfs-common
+      - net-tools
+    state: present

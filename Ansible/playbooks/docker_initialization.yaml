@@ -7,6 +7,7 @@
       aarch64: arm64
   roles:
     - docker
+
 - name: Installing Swarm on RaspberryPiOs
   hosts: "rpi5"
   become: true
