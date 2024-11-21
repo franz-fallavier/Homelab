@@ -25,3 +25,8 @@
 901010160#ubuntu-cloud-24.04-0160#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
 901010320#ubuntu-cloud-24.04-0320#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
 901010640#ubuntu-cloud-24.04-0640#/var/lib/vz/template/iso/noble-server-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+
+
+601010100#opensuse-leap-cloud-15.6#/var/lib/vz/template/iso/opensuse-leap-15.6-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+701010100#rockylinux-cloud-9.4#/var/lib/vz/template/iso/rockylinux-9.4-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
+801010100#almalinux-cloud-9.4#/var/lib/vz/template/iso/almalinux-9.4-cloudimg-amd64.img#virtio,bridge=vmbr0#local-nvme
